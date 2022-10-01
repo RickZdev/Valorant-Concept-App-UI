@@ -2,13 +2,16 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import Feather from 'react-native-vector-icons/Feather'
-import Fontisto from 'react-native-vector-icons/Fontisto'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import Entypo from 'react-native-vector-icons/Entypo'
 import CustomDrawer from '../components/CustomDrawer'
 import COLORS from '../global/COLORS'
 
 import AppStack from './AppStack'
+import AgentsDrawer from '../screens/AgentsDrawer'
 import NewsScreen from '../screens/NewsScreen'
+import PatchDrawer from '../screens/PatchDrawer'
+import DiscoverDrawer from '../screens/DiscoverDrawer'
+import EsportsDrawer from '../screens/EsportsDrawer'
 
 const Drawer = createDrawerNavigator();
 
@@ -17,34 +20,55 @@ const MenuDrawer = () => {
     <View style={styles.container}>
       <Drawer.Navigator
         screenOptions={{
+          drawerStyle: {
+            backgroundColor: COLORS.secondary,
+          },
+          drawerItemStyle: {
+            borderBottomColor: '#2A343E',
+            borderBottomWidth: 2,
+            padding: 0,
+          },
           headerShown: false,
-          drawerPosition: "left",
+          drawerPosition: "right",
           drawerType: 'slide',
-          drawerLabelStyle: { marginLeft: -20, fontSize: 14, fontFamily: 'Gilroy-ExtraBold' },
+          drawerLabelStyle: { marginLeft: 10, fontSize: 20, fontFamily: 'MonumentExtended-Regular' },
           drawerActiveBackgroundColor: COLORS.primary,
-          drawerActiveTintColor: COLORS.white,
+          drawerActiveTintColor: COLORS.secondary,
+          drawerInactiveTintColor: COLORS.white,
         }}
-        drawerContent={props => <CustomDrawer {...props} />} >
-        <Drawer.Screen name="Home" component={AppStack}
+        drawerContent={props => <CustomDrawer {...props} />} 
+        >
+        <Drawer.Screen name="Game" component={AppStack} 
           options={{
-            drawerLabel: 'Home',
-            drawerIcon: ({ color }) => <Fontisto name="home" size={18} color={color} />,
-          }} />
-        <Drawer.Screen name="NewsScreen" component={NewsScreen}
+            drawerLabel: 'GAME'
+          }}
+        />
+        <Drawer.Screen name="Agents" component={AgentsDrawer} 
           options={{
-            drawerLabel: 'News',
-            drawerIcon: ({ color }) => <Fontisto name="coffeescript" size={18} color={color} />,
-          }} />
-        {/* <Drawer.Screen name="OrderScreen" component={OrderScreen}
+            drawerLabel: 'AGENTS'
+          }}
+        />
+        <Drawer.Screen name="News" component={NewsScreen} 
           options={{
-            drawerLabel: 'Track My Orders',
-            drawerIcon: ({ color }) => <Feather name="package" size={18} color={color} />,
-          }} />
-        <Drawer.Screen name="SettingsScreen" component={SettingsScreen}
+            drawerLabel: 'NEWS',
+            // drawerIcon: ({ focused }) => <Entypo name="triangle-right" size={18} color={focused ? COLORS.secondary : COLORS.primary} />,
+          }}
+        />
+        <Drawer.Screen name="Patch" component={PatchDrawer} 
           options={{
-            drawerLabel: 'Settings',
-            drawerIcon: ({ color }) => <MaterialCommunityIcons name="cog-outline" size={18} color={color} />,
-          }} /> */}
+            drawerLabel: 'PATCH'
+          }}
+        />
+        <Drawer.Screen name="Discover" component={DiscoverDrawer} 
+          options={{
+            drawerLabel: 'DISCOVER'
+          }}
+        />
+        <Drawer.Screen name="Esports" component={EsportsDrawer} 
+          options={{
+            drawerLabel: 'ESPORTS'
+          }}
+        />
       </Drawer.Navigator>
     </View>
   )

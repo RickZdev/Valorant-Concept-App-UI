@@ -9,7 +9,7 @@ const AppStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={HomeScreen}>
       <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ presentation: 'card' }} />
-      <Stack.Screen name="HeroScreen" component={HeroScreen} options={{ presentation: 'modal' }} />
+      <Stack.Screen name="HeroScreen" component={HeroScreen} options={{ presentation: 'transparentModal' }} />
     </Stack.Navigator>
   )
 }

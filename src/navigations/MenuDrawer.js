@@ -1,8 +1,6 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
-import Feather from 'react-native-vector-icons/Feather'
-import Entypo from 'react-native-vector-icons/Entypo'
 import CustomDrawer from '../components/CustomDrawer'
 import COLORS from '../global/COLORS'
 

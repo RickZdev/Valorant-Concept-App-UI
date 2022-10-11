@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, TextInput, ScrollView } from 'react-native'
+import { View, Text, TextInput, ScrollView } from 'react-native'
 import React from 'react'
 import Feather from 'react-native-vector-icons/Feather'
 
@@ -6,10 +6,9 @@ import AgentList from '../components/AgentList'
 import AgentCard from '../components/AgentCard'
 import Footer from '../components/Footer'
 import OulinedText from '../components/OulinedText'
-import COLORS from '../global/COLORS'
 import { BoxCutOutBottomRight, BoxCutOutTopLeft } from '../components/BoxCutOut'
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = () => {
   return (
     <View className='flex-1'>
       <ScrollView className='bg-primary' alwaysBounceVertical={true} bounces={true}>
